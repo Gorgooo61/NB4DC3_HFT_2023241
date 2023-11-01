@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace NB4DC23_HFT_2023241.Models
 {
-    internal class Brands
+    internal class Brand
     {
-        public string BrandID { get; set; }
-        public string BrandName { get; set; }
-        public string BrandCountry { get; set; }
     }
 }
