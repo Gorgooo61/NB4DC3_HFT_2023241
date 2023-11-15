@@ -3,7 +3,7 @@ using NB4DC23_HFT_2023241.Models;
 
 namespace NB4DC3_HFT_2023241.Repository
 {
-    internal class CarRentalDbContext : DbContext
+    public class CarRentalDbContext : DbContext
     {
         public CarRentalDbContext()
         {
