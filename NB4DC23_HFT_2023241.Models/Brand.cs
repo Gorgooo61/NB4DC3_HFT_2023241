@@ -34,5 +34,23 @@ namespace NB4DC23_HFT_2023241.Models
             BrandName = split[1];
             BrandCountry = split[2];
         }
+
+        public override bool Equals(object obj)
+        {
+            Brand B = obj as Brand;
+
+            if (B == null)
+            {
+                return false;
+            }
+            else
+            {
+                return this.BrandID == B.BrandID;
+            }
+        }
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(this.BrandID);
+        }
     }
 }

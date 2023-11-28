@@ -34,5 +34,25 @@ namespace NB4DC23_HFT_2023241.Models
             BrandID = int.Parse(split[1]);
             Model = split[2];
         }
+
+
+        public override bool Equals(object obj)
+        {
+            Car C = obj as Car;
+
+            if (C == null)
+            {
+                return false;
+            }
+            else
+            {
+                return this.CarID == C.CarID;
+            }
+        }
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(this.CarID);
+        }
+
     }
 }

@@ -55,7 +55,7 @@ namespace NB4DC3_HFT_2023241.Logic
 
         public List<Car> SwiftIsTheGoat()
         {
-            return this.repo.ReadAll().Where(t=>t.Model=="swift").ToList();
+            return this.repo.ReadAll().Where(t=>t.Model=="Swift").ToList();
         }
     }
 }
