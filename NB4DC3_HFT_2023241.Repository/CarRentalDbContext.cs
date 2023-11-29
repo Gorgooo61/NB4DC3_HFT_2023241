@@ -17,8 +17,8 @@ namespace NB4DC3_HFT_2023241.Repository
         {
             if (!builder.IsConfigured)
             {
-                string conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\CarRental.mdf;Integrated Security=True;MultipleActiveResultSets=True";
-                builder.UseLazyLoadingProxies().UseSqlServer(conn);
+                //string conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\CarRental.mdf;Integrated Security=True;MultipleActiveResultSets=True";
+                builder.UseLazyLoadingProxies().UseInMemoryDatabase("UwU");
             }
         }
 
@@ -37,18 +37,18 @@ namespace NB4DC3_HFT_2023241.Repository
 
             modelBuilder.Entity<Car>().HasData(new Car[]
             {
-                new Car("1#1#499PM"),
-                new Car("2#2#AMG_GT_63"),
-                new Car("3#3#720S"),
-                new Car("4#4#Swift")
+                new Car("4#1#499PM"),
+                new Car("3#2#AMG_GT_63"),
+                new Car("2#3#720S"),
+                new Car("1#4#Swift")
             });
 
             modelBuilder.Entity<Order>().HasData(new Order[]
             {
-                new Order("1#1#2"),
-                new Order("2#2#3"),
-                new Order("3#3#1"),
-                new Order("4#4#7")
+                new Order("4#1#2"),
+                new Order("3#2#3"),
+                new Order("2#3#1"),
+                new Order("1#4#7")
             });
         }
     }
