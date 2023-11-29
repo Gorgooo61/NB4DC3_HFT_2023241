@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json.Serialization;
 
 namespace NB4DC23_HFT_2023241.Models
 {
@@ -19,6 +20,8 @@ namespace NB4DC23_HFT_2023241.Models
 
         [Range(1, 7)]
         public int HowManyDays { get; set; }
+
+
         public virtual Car Car { get; set; }
 
         public Order()

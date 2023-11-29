@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json.Serialization;
 
 namespace NB4DC23_HFT_2023241.Models
 {
@@ -20,7 +21,10 @@ namespace NB4DC23_HFT_2023241.Models
         [StringLength(240)]
         public string Model { get; set; }
 
+        
         public virtual Brand Brand { get; set; }
+
+        [JsonIgnore]
         public virtual ICollection<Order> Orders { get; set; }
 
         public Car()

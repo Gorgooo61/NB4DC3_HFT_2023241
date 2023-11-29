@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Text.Json.Serialization;
 
 namespace NB4DC23_HFT_2023241.Models
 {
@@ -21,6 +22,7 @@ namespace NB4DC23_HFT_2023241.Models
         [StringLength(240)]
         public string BrandCountry { get; set; }
 
+        [JsonIgnore]
         public virtual ICollection<Car> Cars { get; set; }
 
         public Brand()
