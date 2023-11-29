@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace NB4DC3_HFT_2023241.Logic
 {
-    public class OrderLogic
+    public class OrderLogic : IOrderLogic
     {
         IRepository<Order> repo;
 
@@ -19,7 +19,7 @@ namespace NB4DC3_HFT_2023241.Logic
 
         public void Create(Order item)
         {
-            if(item.CarID>4)
+            if (item.CarID > 4)
             {
                 throw new ArgumentException("we don't have that many cars, duh...");
             }

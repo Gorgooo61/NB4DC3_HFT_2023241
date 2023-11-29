@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace NB4DC3_HFT_2023241.Logic
 {
-    public class CarLogic
+    public class CarLogic : ICarLogic
     {
         IRepository<Car> repo;
 
@@ -19,7 +19,7 @@ namespace NB4DC3_HFT_2023241.Logic
 
         public void Create(Car item)
         {
-            if(item.CarID>4)
+            if (item.CarID > 4)
             {
                 throw new ArgumentException("too many...");
             }
@@ -55,7 +55,7 @@ namespace NB4DC3_HFT_2023241.Logic
 
         public List<Car> SwiftIsTheGoat()
         {
-            return this.repo.ReadAll().Where(t=>t.Model=="Swift").ToList();
+            return this.repo.ReadAll().Where(t => t.Model == "Swift").ToList();
         }
     }
 }
