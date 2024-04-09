@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Car UI </title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <h1>Car Catalog</h1>
+
+    <div id="formdiv">
+        <label>Brand ID</label>
+        <input type="text" id="brandid" />
+        <label>Order ID</label>
+        <input type="text" id="orderid" />
+        <label>Model Name</label>
+        <input type="text" id="modelname" />
+        <button type="button" onclick="create()">Add Car</button>
+    </div>
+
+    <div id="updateformdiv">
+        <label>Brand ID</label>
+        <input type="text" id="brandidtoupdate" />
+        <label>Order ID</label>
+        <input type="text" id="orderidtoupdate" />
+        <label>Model Name</label>
+        <input type="text" id="modelnametoupdate" />
+        <button type="button" onclick="update()">Update Car</button>
+    </div>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Brand ID</th>
+                <th>Order ID</th>
+                <th>Model name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="resultarea">
+        </tbody>
+    </table>
+
+    <div id="ferrariSection">
+        <img src="Ferrari.jpg" alt="Ferrari Image" style="width: 150px; margin-bottom: 10px;">
+        <p style="text-align: center;">Ferrari is the best car brand, change my mind</p>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
+    <script src="carscript.js"></script>
+</body>
+</html>

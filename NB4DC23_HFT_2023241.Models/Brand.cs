@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Text.Json.Serialization;
 
-namespace NB4DC23_HFT_2023241.Models
+namespace NB4DC3_HFT_2023241.Models
 {
     public class Brand
     {
@@ -24,6 +24,13 @@ namespace NB4DC23_HFT_2023241.Models
 
         [JsonIgnore]
         public virtual ICollection<Car> Cars { get; set; }
+
+
+
+
+        [JsonIgnore]
+        public virtual ICollection<Order> Orders { get; set; }
+
 
         public Brand()
         {

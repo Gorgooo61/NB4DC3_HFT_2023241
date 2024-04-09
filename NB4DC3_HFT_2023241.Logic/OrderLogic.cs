@@ -1,4 +1,4 @@
-﻿using NB4DC23_HFT_2023241.Models;
+﻿using NB4DC3_HFT_2023241.Models;
 using NB4DC3_HFT_2023241.Repository;
 using System;
 using System.Collections.Generic;
@@ -17,6 +17,16 @@ namespace NB4DC3_HFT_2023241.Logic
             this.repo = repo;
         }
 
+        /*public void Create(Order item)
+        {
+            if (item.CarID > 4)
+            {
+                throw new ArgumentException("we don't have that many cars, duh...");
+            }
+            this.repo.Create(item);
+        } regi*/
+
+        //uj v
         public void Create(Order item)
         {
             if (item.CarID > 4)

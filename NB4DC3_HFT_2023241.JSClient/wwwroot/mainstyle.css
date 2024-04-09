@@ -1,0 +1,57 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('grey.png');
+    background-color: #7d868d;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#formdiv {
+    text-align: center;
+}
+
+button {
+    background-color: transparent;
+    color: #fff;
+    padding: 15px 40px;
+    margin: 10px;
+    border: 2px solid #000000;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+    button:hover {
+        background-color: #9f1f1f;
+        border-color: #9f1f1f;
+        padding: 17px 42px;
+    }
+
+    button:focus {
+        outline: none;
+    }
+
+    button:active {
+        background-color: #a70000;
+        border-color: #a70000;
+    }
+
+#ferrari-logo {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 30%;
+    height: auto;
+    z-index: -1;
+}

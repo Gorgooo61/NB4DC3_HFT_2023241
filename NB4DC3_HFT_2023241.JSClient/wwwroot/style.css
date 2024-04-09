@@ -1,0 +1,104 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 30px;
+    color: #333;
+}
+
+#formdiv,
+#updateformdiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+label {
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[type="text"] {
+    width: 200px;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #808080;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+    button:hover {
+        background-color: #cc0000;
+        transform: scale(1.05);
+    }
+
+table {
+    width: calc(100% - 150px);
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #a70000;
+    color: #fff;
+}
+
+td {
+    background-color: #ccc;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+    .actions button {
+        margin-left: 5px;
+    }
+
+#updateformdiv {
+    display: none;
+}
+
+#ferrariSection {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 150px;
+    background-color: #a70000;
+    padding: 20px;
+    text-align: center;
+    border-left: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+    border-top: 2px solid #000000;
+}
+
+.second-button,
+.first-button {
+    display: inline-block;
+    margin-right: 20px;
+}

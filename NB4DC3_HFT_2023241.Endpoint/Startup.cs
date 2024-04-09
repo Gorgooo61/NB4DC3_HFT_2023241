@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using NB4DC23_HFT_2023241.Models;
+using NB4DC3_HFT_2023241.Models;
 using NB4DC3_HFT_2023241.Logic;
 using NB4DC3_HFT_2023241.Repository;
 using System;
@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Diagnostics;
+using NB4DC3_HFT_2023241.Endpoint.Services;
 
 namespace NB4DC3_HFT_2023241.Endpoint
 {
@@ -41,6 +42,8 @@ namespace NB4DC3_HFT_2023241.Endpoint
             services.AddTransient<ICarLogic, CarLogic>();
             services.AddTransient<IOrderLogic, OrderLogic>();
 
+            services.AddSignalR();
+
             services.AddControllers();
             services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo { Title = "NB4DC3_HFT_2023241.Endpoint", Version = "v1" }); }) ;
         }
@@ -64,6 +67,11 @@ namespace NB4DC3_HFT_2023241.Endpoint
                 await context.Response.WriteAsJsonAsync(response);
             }));
 
+            app.UseCors(x => x
+                .AllowCredentials()
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .WithOrigins("http://localhost:7523"));
 
             app.UseRouting();
 
@@ -72,6 +80,7 @@ namespace NB4DC3_HFT_2023241.Endpoint
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<SignalRHub>("/hub");
             });
         }
     }

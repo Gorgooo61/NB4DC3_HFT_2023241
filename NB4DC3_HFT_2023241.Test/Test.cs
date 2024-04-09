@@ -1,6 +1,6 @@
 ﻿using Castle.Core.Resource;
 using Moq;
-using NB4DC23_HFT_2023241.Models;
+using NB4DC3_HFT_2023241.Models;
 using NB4DC3_HFT_2023241.Logic;
 using NB4DC3_HFT_2023241.Repository;
 using NUnit.Framework;

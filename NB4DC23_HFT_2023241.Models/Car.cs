@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.Json.Serialization;
 
-namespace NB4DC23_HFT_2023241.Models
+namespace NB4DC3_HFT_2023241.Models
 {
     public class Car
     {
@@ -18,14 +18,22 @@ namespace NB4DC23_HFT_2023241.Models
         [ForeignKey(nameof(Brand))]
         public int BrandID { get; set; }
 
+
+        public int OrderID { get; set; }
+
         [StringLength(240)]
         public string Model { get; set; }
 
-        
+
+
         public virtual Brand Brand { get; set; }
 
+
+
+        //uj v
         [JsonIgnore]
-        public virtual ICollection<Order> Orders { get; set; }
+        public virtual Order Order { get; set; }
+
 
         public Car()
         {
@@ -36,7 +44,8 @@ namespace NB4DC23_HFT_2023241.Models
             string[] split = line.Split('#');
             CarID = int.Parse(split[0]);
             BrandID = int.Parse(split[1]);
-            Model = split[2];
+            OrderID = int.Parse(split[2]);
+            Model = split[3];
         }
 
 

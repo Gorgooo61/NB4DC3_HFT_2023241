@@ -1,4 +1,4 @@
-﻿using NB4DC23_HFT_2023241.Models;
+﻿using NB4DC3_HFT_2023241.Models;
 using NB4DC3_HFT_2023241.Repository;
 using System;
 using System.Collections.Generic;
@@ -19,7 +19,11 @@ namespace NB4DC3_HFT_2023241.Logic
 
         public void Create(Brand item)
         {
-            if (item.BrandCountry.Contains("Romania"))
+            /*if (item.BrandCountry.Contains("Romania"))
+            {
+                throw new ArgumentException("It's not a valid country");
+            }*/
+            if (item.BrandCountry=="Romania")
             {
                 throw new ArgumentException("It's not a valid country");
             }

@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.Json.Serialization;
 
-namespace NB4DC23_HFT_2023241.Models
+namespace NB4DC3_HFT_2023241.Models
 {
     public class Order
     {
@@ -22,7 +22,12 @@ namespace NB4DC23_HFT_2023241.Models
         public int HowManyDays { get; set; }
 
 
-        public virtual Car Car { get; set; }
+
+
+
+        [JsonIgnore]
+        public virtual ICollection<Brand> Brands { get; set; }
+        public virtual ICollection<Car> Cars { get; set; }
 
         public Order()
         {

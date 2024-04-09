@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Brand UI </title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <h1>Brand Catalog</h1>
+
+    <div id="formdiv">
+        <label>Brand Name</label>
+        <input type="text" id="brandname" />
+        <label>Brand Country</label>
+        <input type="text" id="brandcountry" />
+        <button type="button" onclick="create()">Add Brand</button>
+    </div>
+
+    <div id="updateformdiv">
+        <label>Brand Name</label>
+        <input type="text" id="brandnametoupdate" />
+        <label>Brand Country</label>
+        <input type="text" id="brandcountrytoupdate" />
+        <button type="button" onclick="update()">Update Brand</button>
+    </div>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Country</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="resultarea">
+        </tbody>
+    </table>
+
+    <div id="ferrariSection">
+        <img src="Ferrari.jpg" alt="Ferrari Image" style="width: 150px; margin-bottom: 10px;">
+        <p style="text-align: center;">Ferrari is the best car brand, change my mind</p>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-﻿using NB4DC23_HFT_2023241.Models;
+﻿using NB4DC3_HFT_2023241.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,15 +15,24 @@ namespace NB4DC3_HFT_2023241.Repository
         }
         public override Brand Read(int id)
         {
-            return this.ctx.Brands.First(t => t.BrandID == id);
+            return ctx.Brands.First(t => t.BrandID == id);
         }
         public override void Update(Brand item)
         {
             var old = Read(item.BrandID);
+            if (old == null)
+            {
+                throw new ArgumentException("Item not exist..");
+            }
             foreach (var prop in old.GetType().GetProperties())
             {
-                prop.SetValue(old, prop.GetValue(item));
+                if (prop.GetAccessors().FirstOrDefault(t => t.IsVirtual) == null)
+                {
+                    prop.SetValue(old, prop.GetValue(item));
+                }
             }
+            ctx.SaveChanges();
         }
+        
     }
 }
